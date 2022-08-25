@@ -13,7 +13,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, BoomArrow.MODID);
 
-    public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("BOOM_ARROW",
+    public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
             () -> new Item(new Item.Properties()
                     .tab(CreativeModeTab.TAB_MISC)
                     .stacksTo(64)));
