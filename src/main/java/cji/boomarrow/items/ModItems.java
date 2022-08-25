@@ -14,8 +14,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, BoomArrow.MODID);
 
     public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
-            () -> new Item(new Item.Properties()
-                    .tab(CreativeModeTab.TAB_MISC)
+            () -> new ItemBoomArrow(new Item.Properties()
+                    .tab(ModCreativeModeTab.BOOM_ARROW_TAB)
                     .stacksTo(64)));
 
     public static void register(IEventBus eventBus){

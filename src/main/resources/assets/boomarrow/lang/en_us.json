@@ -1,3 +1,5 @@
 {
-  "item.boomarrow.boom_arrow": "BOOM Arrow"
+  "item.boomarrow.boom_arrow": "BOOM Arrow",
+
+  "itemGroup.boomarrowtab": "BOOM Arrow Tab"
 }

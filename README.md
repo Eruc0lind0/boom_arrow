@@ -5,16 +5,22 @@ To build this, for the sake of my sanity, I shall list what I did here:
 
 1) Delete everything in C:/Users/<user>/.gradle - let's start clean, particularly if things aren't working first time.
 2) Unzip the project into a directory
-3) Open it in Intellij
-4) From OUTSIDE Intellij, run the following gradle commands:
+3) Open it in Intellij (I may or may not have imported the gradle project at this point - it won't work though if I did)
+4) From OUTSIDE Intellij (i.e. not in the Intellij terminal), run the following gradle commands from the project dir:
     - gradlew.bat genIntellijRuns
     - gradlew.bat build
 5) Refresh the project in Intellij and hope for the best.
-6) Once the above is done, the Intellij Gradle plugin _should_ recognise and allow us to run tasks.
+6) Once the above is done, the Intellij Gradle plugin _should_ recognise and allow us to run tasks. Then we know it's working.
 
 Here I will also list what I've learnt. This'll be basic stuff, probably, but at least I won't forget.
 
-## CREATE NEW ITEM
+### FIRST THING'S FIRST
+Update the meta data files (mod.toml / build.gradle / pack.mcmeta) so that they're correct for the new mod. In particular:
+- mod.toml has the details of the mod that will display in the Mod menu within Minecraft
+- pack.mcmeta probably doesn't need changing, though the description should probably include the mod name
+- build.gradle is where we set the version, the group id and the archive name, i.e. the mod name. It also describes the manifest.
+
+### CREATE NEW ITEM
 
 First, we need a class for registering items (i.e. ModItems). In this class, we need to:
 - Set up a DeferredRegister, a sort of list for holding items.
