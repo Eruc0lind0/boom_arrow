@@ -1,6 +1,7 @@
-package cji.boomarrow.items.entity;
+package cji.boomarrow.items.entity.projectile;
 
 import cji.boomarrow.items.ModItems;
+import cji.boomarrow.items.entity.ModEntityType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -16,8 +17,8 @@ public class BoomArrowEntity extends AbstractArrow {
         this.referenceItem = ModItems.BOOM_ARROW.get();
     }
 
-    public BoomArrowEntity(LivingEntity livingEntity, Level level, Item referenceItem) {
-        super(ModEntityType.BOOM_ARROW.get(), livingEntity, level);
+    public BoomArrowEntity(LivingEntity shooter, Level level, Item referenceItem) {
+        super(ModEntityType.BOOM_ARROW.get(), shooter, level);
         this.referenceItem = referenceItem;
     }
 

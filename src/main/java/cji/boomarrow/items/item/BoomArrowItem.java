@@ -1,10 +1,9 @@
 package cji.boomarrow.items.item;
 
 import cji.boomarrow.items.ModItems;
-import cji.boomarrow.items.entity.BoomArrowEntity;
+import cji.boomarrow.items.entity.projectile.BoomArrowEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -19,8 +18,8 @@ public class BoomArrowItem extends ArrowItem {
     }
 
     @Override
-    public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity livingEntity) {
-        BoomArrowEntity arrow = new BoomArrowEntity(livingEntity, level, ModItems.BOOM_ARROW.get());
+    public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity shooter) {
+        BoomArrowEntity arrow = new BoomArrowEntity(shooter, level, ModItems.BOOM_ARROW.get());
         arrow.setBaseDamage(this.damage);
         return arrow;
     }

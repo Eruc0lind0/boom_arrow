@@ -1,7 +1,7 @@
 package cji.boomarrow.client.renderer.entity;
 
 import cji.boomarrow.BoomArrow;
-import cji.boomarrow.items.entity.BoomArrowEntity;
+import cji.boomarrow.items.entity.projectile.BoomArrowEntity;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -21,7 +21,7 @@ public class BoomArrowRenderer extends ArrowRenderer<BoomArrowEntity> {
         String refItemDesc = referenceItem.getDescriptionId();
         return new ResourceLocation(
                 BoomArrow.MODID,
-                "textures/item/" + refItemDesc.substring(refItemDesc.lastIndexOf(".") + 1) + ".png"
+                "textures/entity/projectiles/" + refItemDesc.substring(refItemDesc.lastIndexOf(".") + 1) + ".png"
         );
     }
 }
