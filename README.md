@@ -77,4 +77,25 @@ Recipes are fairly simple - just JSON files under:
 - data/<mod_name>/recipes
 
 > **You can look at Vanilla Minecraft recipes in the following package**:
-> - net.minecraft:client:extras:<ver>
+> - net.minecraft:client:extras:ver
+
+### ARROWS ARE SPECIAL
+
+It turns out that arrows are special. Whilst it's simple enough to extend the ArrowItem and Arrow classes and make something that is
+essentially the same as an existing type of arrow, the important thing seems to be that we need to create a JSON override (or addition)
+to the existing file(s) in these locations:
+- resources/data/minecraft/tags/entity_types/arrows.json
+- resources/data/minecraft/tags/items/arrows.json
+
+We can copy the general structure of the files from net.minecraft:client:extras:ver - but, the first key in the json should be replace=false, i.e.
+
+```
+{
+  "replace": false,
+  "values": [
+    "boomarrow:boom_arrow"
+  ]
+}
+```
+
+This then lets Minecraft know that the item you've created is a type of arrow, so can be fired from a bow.

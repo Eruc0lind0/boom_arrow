@@ -1,6 +1,7 @@
 package cji.boomarrow;
 
-import cji.boomarrow.item.ModItems;
+import cji.boomarrow.items.ModItems;
+import cji.boomarrow.items.entity.ModEntityType;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,6 +24,7 @@ public class BoomArrow
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
+        ModEntityType.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::commonSetup);

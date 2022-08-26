@@ -1,7 +1,8 @@
-package cji.boomarrow.item;
+package cji.boomarrow.items;
 
 import cji.boomarrow.BoomArrow;
-import cji.boomarrow.misc.ModCreativeModeTab;
+import cji.boomarrow.items.item.BoomArrowItem;
+import cji.boomarrow.tab.ModCreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,9 +15,9 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, BoomArrow.MODID);
 
     public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
-            () -> new ItemBoomArrow(new Item.Properties()
+            () -> new BoomArrowItem(new Item.Properties()
                     .tab(ModCreativeModeTab.BOOM_ARROW_TAB)
-                    .stacksTo(64)));
+                    .stacksTo(64), 1.5f));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
