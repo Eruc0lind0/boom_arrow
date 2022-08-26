@@ -1,7 +1,7 @@
-package cji.boomarrow.items;
+package cji.boomarrow.item;
 
 import cji.boomarrow.BoomArrow;
-import net.minecraft.world.item.CreativeModeTab;
+import cji.boomarrow.misc.ModCreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

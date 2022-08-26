@@ -1,4 +1,4 @@
-package cji.boomarrow.items;
+package cji.boomarrow.item;
 
 import net.minecraft.world.item.Item;
 

@@ -1,5 +1,6 @@
-package cji.boomarrow.items;
+package cji.boomarrow.misc;
 
+import cji.boomarrow.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 

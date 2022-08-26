@@ -70,3 +70,11 @@ That's essentially all the code required to put a new item (that doesn't really 
     }
   ```
   - textures/item/<item_name>.png: the PNG texture file
+
+### ADD A RECIPE
+
+Recipes are fairly simple - just JSON files under:
+- data/<mod_name>/recipes
+
+> **You can look at Vanilla Minecraft recipes in the following package**:
+> - net.minecraft:client:extras:<ver>
