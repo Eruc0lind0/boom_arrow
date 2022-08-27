@@ -27,7 +27,7 @@ First, we need a class for registering items (i.e. ModItems). In this class, we 
 - Do item registrations to this DeferredRegister. Below, I'm creating a new generic item, adding it to the Misc tab and enabling stacks of 64.
 - Create a register method that registers all the items added to the DeferredRegister.
 
-```
+```java
    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BoomArrow.MODID);
 
     public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
@@ -45,7 +45,7 @@ In our main class, we need to:
 - Register all the items in ModItems
 - Register this to the Forge EVENT_BUS
 
-```
+```java
      IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
      ModItems.register(modEventBus);
      MinecraftForge.EVENT_BUS.register(this);
@@ -55,13 +55,13 @@ That's essentially all the code required to put a new item (that doesn't really 
 
 - resources/assets/<mod_name>/
   - lang/en_us.json: a json file that defines the name of the item (in US English)
-  ```
+  ```json
   {
     "item.<mod_name>.<item_name>": "Item Name In Game"
   }
   ```
   - models/item/<item_name>.json: a json file that defines what model to use and, in the layer0 key, the name of the texture file to use
-  ```
+  ```json
     {
     "parent": "item/generated",
     "textures": {
@@ -78,6 +78,20 @@ Recipes are fairly simple - just JSON files under:
 
 > **You can look at Vanilla Minecraft recipes in the following package**:
 > - net.minecraft:client:extras:ver
+ 
+### ADD A TAB (IF YOU WANT)
+
+You can add a tab fairly easily - create a new class that defines a bunch of static finals that essentially create new CreativeModTab instances.
+Then, when registering the item, we can use this tab when setting the ItemProperties.
+
+```java
+    public static final CreativeModeTab BOOM_ARROW_TAB = new CreativeModeTab("boomarrowtab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.BOOM_ARROW.get());
+        }
+    };
+```
 
 ### ARROWS ARE SPECIAL
 
@@ -89,7 +103,7 @@ to the existing file(s) in these locations:
 
 We can copy the general structure of the files from net.minecraft:client:extras:ver - but, the first key in the json should be replace=false, i.e.
 
-```
+```json
 {
   "replace": false,
   "values": [
@@ -99,3 +113,39 @@ We can copy the general structure of the files from net.minecraft:client:extras:
 ```
 
 This then lets Minecraft know that the item you've created is a type of arrow, so can be fired from a bow.
+
+In short, we need:
+- A class that extends ArrowItem
+  - This will then need to override the createArrow method at the minimum, but probably isInfinite as well
+- A class that extends AbstractArrow
+  - This will need to override getPickupItem, so we pick up the right type of item
+- If we want specific rendering, then a class that extends ArrowRenderer
+  - God knows how this actually works - one thing worth mentioning is that we need a specific texture to render an arrow that has been fired. These are present in:
+    - resources/assets/boomarrow/textures/entity/projectiles
+
+### MAKE THEM EXPLODE
+
+There are probably several ways to do this - the one I found that worked was to use the Level.explode() method.
+In the entity, we can override other AbstractArrow methods to determine how to explode a thing. I chose to explode when the arrow hits a block. Therefore:
+
+```java
+    @Override
+    protected void onHitBlock(BlockHitResult blockHitResult) {
+        super.onHitBlock(blockHitResult);
+        BlockPos blockPos = blockHitResult.getBlockPos();
+        level.explode(this,
+                blockPos.getX(),
+                blockPos.getY(),
+                blockPos.getZ(),
+                strength,
+                true,
+                Explosion.BlockInteraction.DESTROY
+        );
+        this.discard();
+    }
+```
+
+Points to remember:
+- Call this.discard() otherwise the arrow never dies and keeps exploding forever. This is a problem.
+- You can hardcode 'strength' to a float here. Instead, I chose to pass it into the Constructor of BoomArrowEntity, in case I wanted different strength arrows, i.e. different types.
+- I set the base damage of the arrow using arrow.setBaseDamage() when creating an arrow. I set this high, because I wanted the arrows to kill things easily - but not explode, crucially.

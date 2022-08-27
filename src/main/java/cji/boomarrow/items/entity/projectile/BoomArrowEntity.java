@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.event.level.ExplosionEvent;
 
 public class BoomArrowEntity extends AbstractArrow {
     private final Item referenceItem;
