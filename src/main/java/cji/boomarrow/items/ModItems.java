@@ -17,7 +17,7 @@ public class ModItems {
     public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
             () -> new BoomArrowItem(new Item.Properties()
                     .tab(ModCreativeModeTab.BOOM_ARROW_TAB)
-                    .stacksTo(64), 1.5f));
+                    .stacksTo(64), 100f));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

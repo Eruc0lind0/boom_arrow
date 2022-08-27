@@ -19,7 +19,8 @@ public class BoomArrowItem extends ArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity shooter) {
-        BoomArrowEntity arrow = new BoomArrowEntity(shooter, level, ModItems.BOOM_ARROW.get());
+        float strength = 4f;
+        BoomArrowEntity arrow = new BoomArrowEntity(shooter, level, ModItems.BOOM_ARROW.get(), strength);
         arrow.setBaseDamage(this.damage);
         return arrow;
     }
