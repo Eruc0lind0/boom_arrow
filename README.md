@@ -1,5 +1,5 @@
-# boom_arrow
-A Minecraft mod for making arrows go boom.
+# make_it_boom
+A Minecraft mod for making things that go boom.
 
 To build this, for the sake of my sanity, I shall list what I did here:
 
@@ -28,9 +28,9 @@ First, we need a class for registering items (i.e. ModItems). In this class, we 
 - Create a register method that registers all the items added to the DeferredRegister.
 
 ```java
-   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BoomArrow.MODID);
+   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MakeItBoom.MODID);
 
-    public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
+    public static final RegistryObject<Item> make_it_boom = ITEMS.register("make_it_boom",
             () -> new Item(new Item.Properties()
                     .tab(CreativeModeTab.TAB_MISC)
                     .stacksTo(64)));
@@ -85,10 +85,10 @@ You can add a tab fairly easily - create a new class that defines a bunch of sta
 Then, when registering the item, we can use this tab when setting the ItemProperties.
 
 ```java
-    public static final CreativeModeTab BOOM_ARROW_TAB = new CreativeModeTab("boomarrowtab") {
+    public static final CreativeModeTab make_it_boom_TAB = new CreativeModeTab("makeitboomtab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.BOOM_ARROW.get());
+            return new ItemStack(ModItems.make_it_boom.get());
         }
     };
 ```
@@ -107,7 +107,7 @@ We can copy the general structure of the files from net.minecraft:client:extras:
 {
   "replace": false,
   "values": [
-    "boomarrow:boom_arrow"
+    "makeitboom:make_it_boom"
   ]
 }
 ```
@@ -121,7 +121,7 @@ In short, we need:
   - This will need to override getPickupItem, so we pick up the right type of item
 - If we want specific rendering, then a class that extends ArrowRenderer
   - God knows how this actually works - one thing worth mentioning is that we need a specific texture to render an arrow that has been fired. These are present in:
-    - resources/assets/boomarrow/textures/entity/projectiles
+    - resources/assets/makeitboom/textures/entity/projectiles
 
 ### MAKE THEM EXPLODE
 
@@ -147,5 +147,5 @@ In the entity, we can override other AbstractArrow methods to determine how to e
 
 Points to remember:
 - Call this.discard() otherwise the arrow never dies and keeps exploding forever. This is a problem.
-- You can hardcode 'strength' to a float here. Instead, I chose to pass it into the Constructor of BoomArrowEntity, in case I wanted different strength arrows, i.e. different types.
+- You can hardcode 'strength' to a float here. Instead, I chose to pass it into the Constructor of MakeItBoomEntity, in case I wanted different strength arrows, i.e. different types.
 - I set the base damage of the arrow using arrow.setBaseDamage() when creating an arrow. I set this high, because I wanted the arrows to kill things easily - but not explode, crucially.

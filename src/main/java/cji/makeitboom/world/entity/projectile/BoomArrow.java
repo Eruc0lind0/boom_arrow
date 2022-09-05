@@ -1,7 +1,7 @@
-package cji.boomarrow.items.entity.projectile;
+package cji.makeitboom.world.entity.projectile;
 
-import cji.boomarrow.items.ModItems;
-import cji.boomarrow.items.entity.ModEntityType;
+import cji.makeitboom.world.item.ModItems;
+import cji.makeitboom.world.entity.ModEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,16 +12,16 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class BoomArrowEntity extends AbstractArrow {
+public class BoomArrow extends AbstractArrow {
     private final Item referenceItem;
     private float strength;
 
-    public BoomArrowEntity(EntityType<? extends AbstractArrow> type, Level level) {
+    public BoomArrow(EntityType<? extends AbstractArrow> type, Level level) {
         super(type, level);
         this.referenceItem = ModItems.BOOM_ARROW.get();
     }
 
-    public BoomArrowEntity(LivingEntity shooter, Level level, Item referenceItem, float strength) {
+    public BoomArrow(LivingEntity shooter, Level level, Item referenceItem, float strength) {
         super(ModEntityType.BOOM_ARROW.get(), shooter, level);
         this.referenceItem = referenceItem;
         this.strength = strength;

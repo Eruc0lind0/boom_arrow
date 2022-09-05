@@ -5,8 +5,8 @@ plugins {
 }
 
 version = '0.1'
-group = 'cji.boomarrow'
-archivesBaseName = 'boomarrow'
+group = 'cji.makeitboom'
+archivesBaseName = 'makeitboom'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -20,10 +20,10 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'boomarrow'
+            property 'forge.enabledGameTestNamespaces', 'makeitboom'
 
             mods {
-                boomarrow {
+                makeitboom {
                     source sourceSets.main
                 }
             }
@@ -34,10 +34,10 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'boomarrow'
+            property 'forge.enabledGameTestNamespaces', 'makeitboom'
 
             mods {
-                boomarrow {
+                makeitboom {
                     source sourceSets.main
                 }
             }
@@ -48,10 +48,10 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'boomarrow'
+            property 'forge.enabledGameTestNamespaces', 'makeitboom'
 
             mods {
-                boomarrow {
+                makeitboom {
                     source sourceSets.main
                 }
             }
@@ -62,10 +62,10 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'boomarrow', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'makeitboom', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                boomarrow {
+                makeitboom {
                     source sourceSets.main
                 }
             }
@@ -85,7 +85,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Boom Arrow",
+                "Specification-Title"     : "Make It BOOM",
                 "Specification-Vendor"    : "C J Ingle",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,

@@ -1,15 +1,15 @@
-package cji.boomarrow.client;
+package cji.makeitboom.client;
 
-import cji.boomarrow.BoomArrow;
-import cji.boomarrow.client.renderer.entity.BoomArrowRenderer;
-import cji.boomarrow.items.entity.ModEntityType;
+import cji.makeitboom.MakeItBoom;
+import cji.makeitboom.client.renderer.entity.BoomArrowRenderer;
+import cji.makeitboom.world.entity.ModEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(
-        modid = BoomArrow.MODID,
+        modid = MakeItBoom.MODID,
         bus = Mod.EventBusSubscriber.Bus.MOD,
         value= Dist.CLIENT
 )

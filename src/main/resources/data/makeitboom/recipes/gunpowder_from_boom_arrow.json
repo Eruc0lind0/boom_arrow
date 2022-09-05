@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "boomarrow:boom_arrow"
+      "item": "makeitboom:boom_arrow"
     }
   ],
   "result": {

@@ -1,7 +1,7 @@
-package cji.boomarrow;
+package cji.makeitboom;
 
-import cji.boomarrow.items.ModItems;
-import cji.boomarrow.items.entity.ModEntityType;
+import cji.makeitboom.world.item.ModItems;
+import cji.makeitboom.world.entity.ModEntityType;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,13 +14,13 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(BoomArrow.MODID)
-public class BoomArrow
+@Mod(MakeItBoom.MODID)
+public class MakeItBoom
 {
-    public static final String MODID = "boomarrow";
+    public static final String MODID = "makeitboom";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public BoomArrow()
+    public MakeItBoom()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);

@@ -1,7 +1,6 @@
-package cji.boomarrow.items.item;
+package cji.makeitboom.world.item;
 
-import cji.boomarrow.items.ModItems;
-import cji.boomarrow.items.entity.projectile.BoomArrowEntity;
+import cji.makeitboom.world.entity.projectile.BoomArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ArrowItem;
@@ -20,7 +19,7 @@ public class BoomArrowItem extends ArrowItem {
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity shooter) {
         float strength = 4f;
-        BoomArrowEntity arrow = new BoomArrowEntity(shooter, level, ModItems.BOOM_ARROW.get(), strength);
+        BoomArrow arrow = new BoomArrow(shooter, level, ModItems.BOOM_ARROW.get(), strength);
         arrow.setBaseDamage(this.damage);
         return arrow;
     }

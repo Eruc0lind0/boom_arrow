@@ -1,14 +1,14 @@
 modLoader="javafml" #mandatory
 loaderVersion="[43,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 license="GNU GPLv3"
-issueTrackerURL="https://github.com/Eruc0lind0/boom_arrow/issues" #optional
+issueTrackerURL="https://github.com/Eruc0lind0/make_it_boom/issues" #optional
 
 [[mods]] #mandatory
-modId="boomarrow" #mandatory
+modId="makeitboom" #mandatory
 version="${file.jarVersion}" #mandatory
-displayName="BOOM Arrow" #mandatory
+displayName="Make It BOOM" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
-displayURL="https://github.com/Eruc0lind0/boom_arrow" #optional
+displayURL="https://github.com/Eruc0lind0/make_it_boom" #optional
 logoFile="examplemod.png" #optional
 #credits="Thanks for this example mod goes to Java" #optional
 authors="Eruc0lind0" #optional
@@ -19,13 +19,13 @@ This is a mod that introduces a new arrow type that explodes.
 I'm almost certain nobody has ever done this before, ever, ever, ever.
 '''
 
-[[dependencies.boomarrow]] #optional
+[[dependencies.makeitboom]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="[43,)" #mandatory
     ordering="NONE"
     side="BOTH"
-[[dependencies.boomarrow]]
+[[dependencies.makeitboom]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2,1.20)"

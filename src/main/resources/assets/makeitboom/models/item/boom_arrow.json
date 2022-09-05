@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "boomarrow:item/boom_arrow"
+    "layer0": "makeitboom:item/boom_arrow"
   }
 }
