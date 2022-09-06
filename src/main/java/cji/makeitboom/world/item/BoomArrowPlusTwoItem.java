@@ -9,22 +9,22 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 
-public class BoomArrowItem extends ArrowItem {
+public class BoomArrowPlusTwoItem extends ArrowItem {
     public final float damage;
 
-    public BoomArrowItem(Properties properties, float damage) {
+    public BoomArrowPlusTwoItem(Properties properties, float damage) {
         super(properties);
         this.damage = damage;
     }
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity shooter) {
-        float strength = 2f;
+        float strength = 8f;
         BoomArrow arrow = new BoomArrow(
                 ModEntityType.BOOM_ARROW.get(),
                 shooter,
                 level,
-                ModItems.BOOM_ARROW.get(),
+                ModItems.BOOM_ARROW_PLUS_TWO.get(),
                 strength
         );
         arrow.setBaseDamage(this.damage);
@@ -34,6 +34,6 @@ public class BoomArrowItem extends ArrowItem {
     @Override
     public boolean isInfinite(ItemStack stack, ItemStack bow, net.minecraft.world.entity.player.Player player) {
         int enchant = EnchantmentHelper.getTagEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.INFINITY_ARROWS, bow);
-        return enchant <= 0 ? false : this.getClass() == BoomArrowItem.class;
+        return enchant <= 0 ? false : this.getClass() == BoomArrowPlusTwoItem.class;
     }
 }

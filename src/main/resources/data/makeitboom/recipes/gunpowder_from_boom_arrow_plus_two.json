@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "makeitboom:boom_arrow"
+      "item": "makeitboom:boom_arrow_plus_two"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 3,
     "item": "minecraft:gunpowder"
   }
 }

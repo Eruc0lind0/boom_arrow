@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "makeitboom:boom_arrow"
+    "makeitboom:boom_arrow",
+    "makeitboom:boom_arrow_plus_one",
+    "makeitboom:boom_arrow_plus_two"
   ]
 }

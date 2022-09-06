@@ -14,7 +14,7 @@ logoFile="examplemod.png" #optional
 authors="Eruc0lind0" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 description='''
-This is a mod that introduces a new arrow type that explodes.
+This is a mod that introduces various new explosive items.
 
 I'm almost certain nobody has ever done this before, ever, ever, ever.
 '''

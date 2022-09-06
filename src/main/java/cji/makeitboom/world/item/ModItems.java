@@ -1,8 +1,6 @@
 package cji.makeitboom.world.item;
 
 import cji.makeitboom.MakeItBoom;
-import cji.makeitboom.world.item.BoomArrowItem;
-import cji.makeitboom.world.item.ModCreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,7 +15,15 @@ public class ModItems {
     public static final RegistryObject<Item> BOOM_ARROW = ITEMS.register("boom_arrow",
             () -> new BoomArrowItem(new Item.Properties()
                     .tab(ModCreativeModeTab.MAKE_IT_BOOM_TAB)
-                    .stacksTo(64), 100f));
+                    .stacksTo(64), 1f));
+    public static final RegistryObject<Item> BOOM_ARROW_PLUS_ONE = ITEMS.register("boom_arrow_plus_one",
+            () -> new BoomArrowPlusOneItem(new Item.Properties()
+                    .tab(ModCreativeModeTab.MAKE_IT_BOOM_TAB)
+                    .stacksTo(64), 2f));
+    public static final RegistryObject<Item> BOOM_ARROW_PLUS_TWO = ITEMS.register("boom_arrow_plus_two",
+            () -> new BoomArrowPlusTwoItem(new Item.Properties()
+                    .tab(ModCreativeModeTab.MAKE_IT_BOOM_TAB)
+                    .stacksTo(64), 4f));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

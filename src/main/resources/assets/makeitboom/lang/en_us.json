@@ -1,5 +1,7 @@
 {
   "item.makeitboom.boom_arrow": "BOOM Arrow",
+  "item.makeitboom.boom_arrow_plus_one": "BOOM Arrow +1",
+  "item.makeitboom.boom_arrow_plus_two": "BOOM Arrow +2",
 
   "itemGroup.makeitboomtab": "Make It BOOM Tab"
 }

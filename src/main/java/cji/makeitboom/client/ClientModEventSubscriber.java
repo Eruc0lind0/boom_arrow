@@ -1,6 +1,8 @@
 package cji.makeitboom.client;
 
 import cji.makeitboom.MakeItBoom;
+import cji.makeitboom.client.renderer.entity.BoomArrowPlusOneRenderer;
+import cji.makeitboom.client.renderer.entity.BoomArrowPlusTwoRenderer;
 import cji.makeitboom.client.renderer.entity.BoomArrowRenderer;
 import cji.makeitboom.world.entity.ModEntityType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,5 +20,7 @@ public class ClientModEventSubscriber {
     @SubscribeEvent
     public static void onClientSetup(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntityType.BOOM_ARROW.get(), BoomArrowRenderer::new);
+        event.registerEntityRenderer(ModEntityType.BOOM_ARROW_PLUS_ONE.get(), BoomArrowPlusOneRenderer::new);
+        event.registerEntityRenderer(ModEntityType.BOOM_ARROW_PLUS_TWO.get(), BoomArrowPlusTwoRenderer::new);
     }
 }
